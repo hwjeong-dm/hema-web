@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import './styles/global.css';
+import CognitivePage from './pages/cognitive/CognitivePage';
+import VPAPage from './pages/cognitive/vpa/VPAPage';
+import MSTPage from './pages/cognitive/mst/MSTPage';
+import SPSPage from './pages/cognitive/sps/SPSPage';
+import FERPage from './pages/cognitive/fer/FERPage';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/cognitive" replace />} />
+        <Route path="/cognitive" element={<CognitivePage />} />
+        <Route path="/cognitive/vpa" element={<VPAPage />} />
+        <Route path="/cognitive/mst" element={<MSTPage />} />
+        <Route path="/cognitive/sps" element={<SPSPage />} />
+        <Route path="/cognitive/fer" element={<FERPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;

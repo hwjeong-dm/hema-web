@@ -1,0 +1,178 @@
+:root {
+  /* Brand Colors — from colors.xml */
+  --primary:       #2C74DB;
+  --primary-dark:  #114390;
+  --primary-mid:   #2365CC;
+  --primary-light: #ECF2FD;
+  --secondary:     #D0583C;
+
+  /* Background */
+  --bg-dark:   #333D4B;   /* color_font_gray_800 — main app bg */
+  --bg-white:  #FFFFFF;
+  --bg-100:    #F2F4F6;   /* icon circle bg */
+  --bg-50:     #F9FAFB;   /* description box bg */
+
+  /* Text */
+  --text-900: #191F28;
+  --text-800: #333D4B;
+  --text-700: #4E5968;
+  --text-600: #6B7684;
+  --text-500: #8B95A1;
+  --text-400: #B0B8C1;
+  --white:    #FFFFFF;
+
+  /* Line / Border */
+  --line-300: #D1D6DB;
+  --line-200: #E5E8EB;
+
+  /* Status */
+  --success: #03B26C;
+  --error:   #FC3A4A;
+  --alert:   #FFA301;
+
+  /* Radius */
+  --r-14: 14px;
+  --r-20: 20px;
+  --r-10: 10px;
+  --r-8:   8px;
+  --r-full: 9999px;
+
+  /* Color aliases (SPS / legacy compat) */
+  --color-primary:        var(--primary);
+  --color-primary-dark:   var(--primary-dark);
+  --color-bg:             var(--bg-dark);
+  --color-text-primary:   var(--text-900);
+  --color-text-secondary: var(--text-600);
+  --color-border:         var(--line-200);
+  --color-success:        var(--success);
+  --color-error:          var(--error);
+  --color-warning:        var(--alert);
+  --shadow-btn:  0 2px 8px rgba(44,116,219,0.3);
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.08);
+
+  /* Spacing — list / card UI (default: mobile) */
+  --sp-card-py:    20px;   /* CognitivePage 카드 상하 패딩 */
+  --sp-card-gap:   14px;   /* CognitivePage 카드 간격 */
+  --sp-sub-py:     24px;   /* 소검사 카드 상하 패딩 */
+  --sp-sub-mt:     14px;   /* 소검사 카드 간격 */
+  --sp-sub-igap:   14px;   /* 소검사 카드 내부 항목 간격 */
+  --sp-child-p:    12px 14px; /* 중첩 소검사 패딩 */
+
+  /* List / card UI — default (mobile) */
+  --fs-card-title:   var(--fs-body);
+  --fs-card-desc:    var(--fs-sm);
+  --fs-card-badge:   var(--fs-xs);
+  --fs-progress-lbl: var(--fs-2xs);
+  --fs-sub-name:     var(--fs-base);
+  --fs-sub-dur:      var(--fs-sm);
+  --fs-sub-btn:      var(--fs-sm);
+  --fs-sub-desc:     var(--fs-sm);
+  --fs-sub-child:    var(--fs-sm);
+  --fs-sub-cbtn:     var(--fs-2xs);
+
+  /* Font sizes — Galaxy Tab 10" baseline */
+  --fs-2xs:       13px;
+  --fs-xs:        15px;
+  --fs-sm:        16px;
+  --fs-label:     17px;
+  --fs-base:      18px;
+  --fs-body:      19px;
+  --fs-md:        21px;
+  --fs-title:     22px;
+  --fs-lg:        24px;
+  --fs-xl:        27px;
+  --fs-2xl:       29px;
+  --fs-3xl:       44px;
+  --fs-4xl:       58px;
+  --fs-5xl:       76px;
+  --fs-countdown: 86px;
+
+  /* UI dimensions */
+  --header-h: 64px;
+  --badge-sz: 28px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    /* Spacing — tablet+ */
+    --sp-card-py:    28px;
+    --sp-card-gap:   20px;
+    --sp-sub-py:     32px;
+    --sp-sub-mt:     20px;
+    --sp-sub-igap:   18px;
+    --sp-child-p:    16px 18px;
+
+    /* List / card UI — tablet+ */
+    --fs-card-title:   var(--fs-md);
+    --fs-card-desc:    var(--fs-base);
+    --fs-card-badge:   var(--fs-sm);
+    --fs-progress-lbl: var(--fs-xs);
+    --fs-sub-name:     var(--fs-md);
+    --fs-sub-dur:      var(--fs-base);
+    --fs-sub-btn:      var(--fs-base);
+    --fs-sub-desc:     var(--fs-base);
+    --fs-sub-child:    var(--fs-base);
+    --fs-sub-cbtn:     var(--fs-xs);
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --fs-2xs:       14px;
+    --fs-xs:        17px;
+    --fs-sm:        18px;
+    --fs-label:     19px;
+    --fs-base:      20px;
+    --fs-body:      21px;
+    --fs-md:        23px;
+    --fs-title:     24px;
+    --fs-lg:        27px;
+    --fs-xl:        31px;
+    --fs-2xl:       34px;
+    --fs-3xl:       50px;
+    --fs-4xl:       66px;
+    --header-h: 72px;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+html, body, #root {
+  width: 100%; height: 100%;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Noto Sans KR', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-900);
+  overflow: hidden;
+}
+
+button { cursor: pointer; border: none; outline: none; font-family: inherit; background: none; }
+button:disabled { cursor: not-allowed; opacity: 0.5; }
+input { font-family: inherit; }
+
+/* ─── Responsive list / card spacing ────────────────────────────────────────── */
+
+.cog-card-list  { gap: 16px; }
+.cog-card       { padding: 20px 0; }
+
+.sub-item       { margin-top: 16px; }
+.sub-item-card  { padding-top: 24px; padding-bottom: 24px; }
+.sub-item-inner { gap: 14px; }
+.sub-child      { padding: 12px 14px; }
+
+.sub-num-badge  { width: 24px; height: 24px; font-size: var(--fs-xs); }
+.sub-start-btn  { width: 76px;  height: 40px; border-radius: 10px; }
+.sub-child-btn  { width: 60px;  height: 36px; border-radius: 8px; }
+
+@media (min-width: 768px) {
+  .cog-card-list  { gap: 28px; }
+  .cog-card       { padding: 28px 0; }
+
+  .sub-item       { margin-top: 28px; }
+  .sub-item-card  { padding-top: 32px; padding-bottom: 32px; }
+  .sub-item-inner { gap: 18px; }
+  .sub-child      { padding: 16px 18px; }
+
+  .sub-num-badge  { width: 30px; height: 30px; font-size: var(--fs-sm); }
+  .sub-start-btn  { width: 96px;  height: 52px; border-radius: 12px; }
+  .sub-child-btn  { width: 76px;  height: 46px; border-radius: 10px; }
+}
